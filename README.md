@@ -4,4 +4,4 @@ JAPPY is a development environment designed as an educational resource for progr
 
 ### Using a Jupyter client
 
-Para utilizar JAPPY con un client Jupyter, se debe utilizar el archivo [_docker-compose_](jupyter.only/docker-compose) disponible en el directorio _jupyter.only_
+Para utilizar JAPPY con un client Jupyter, se debe utilizar el archivo [_docker-compose_](jupyter.only/docker-compose.yml) disponible en el directorio _jupyter.only_
