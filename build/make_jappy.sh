@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-PLATFORM=linux/amd64,linux/arm64
+PLATFORM=linux/amd64 #,linux/arm64
 NO_CACHE=--no-cache 
 
 case $1 in
