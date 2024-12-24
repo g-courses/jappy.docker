@@ -1,0 +1,120 @@
+# syntax=docker/dockerfile:1
+ARG UBUNTU_VERSION=22.04
+
+FROM ubuntu:${UBUNTU_VERSION}
+
+
+LABEL "mantainer"="Gabriel Astudillo Muñoz (gabriel.astudillo@uv.cl)" 
+LABEL "description"="JAPPY: Environment for developing JAva, cPP (C++) and pYthon programming classes" 
+	  
+
+ARG USER=devuser
+
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=America/Santiago
+
+
+RUN echo 'APT::Install-Suggests "0";' >> /etc/apt/apt.conf.d/00-docker
+RUN echo 'APT::Install-Recommends "0";' >> /etc/apt/apt.conf.d/00-docker
+
+RUN apt update && apt -y upgrade
+RUN apt install --no-install-recommends --yes \
+    sudo apache2    \
+    make g++ cmake  \
+    vim             \
+    locales         \
+    jq              \
+    bc              \
+    pip             \
+    git             \
+    gnupg           \
+    unzip           \
+    default-jdk	    \
+    curl            \
+    wget            \
+    lsof            \
+    iproute2        \
+    doxygen         \
+    graphviz        \
+    supervisor     
+
+RUN apt autoremove -y && apt clean && rm -rf /var/lib/apt/lists/*
+     
+RUN locale-gen "en_US.UTF-8"
+
+ENV LANG=en_US.UTF-8 \
+    LANGUAGE=en_US:en \
+    LC_ALL=en_US.UTF-8
+    
+RUN adduser --gecos "" --disabled-password --ingroup www-data ${USER} \
+    && adduser ${USER} sudo \
+    && echo "${USER} ALL=(ALL) NOPASSWD: ALL" >/etc/sudoers.d/${USER} \
+    && chmod 0440 /etc/sudoers.d/${USER}
+
+ARG IMAGE_DIR=https://raw.githubusercontent.com/g-courses/jappy.rc/refs/heads/main/image_dir
+ADD $IMAGE_DIR/etc/pip.conf /etc/pip.conf
+RUN pip3 install notebook matplotlib pandas geojson plotly 
+
+RUN ldconfig
+
+ADD $IMAGE_DIR/etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/
+ADD $IMAGE_DIR/etc/supervisord.conf /etc/
+
+USER $USER
+RUN touch /home/$USER/.sudo_as_admin_successful
+RUN mkdir -p /home/$USER/workspace
+
+# Install C++ kernel
+# ===================
+USER root
+
+ENV URL_BASE=https://github.com/g-courses/jappy.rc/raw/refs/heads/main/miniconda
+
+RUN ARCH=$(uname -m) && mkdir -p /opt && \
+    MINICONDA_FILE=miniconda3-linux-${ARCH}.install.sh && \
+    wget -P /opt ${URL_BASE}/${MINICONDA_FILE} && \
+    chmod +x /opt/${MINICONDA_FILE} && \
+    /opt/${MINICONDA_FILE} -b -p /opt/miniconda3 && \
+    rm -f /opt/${MINICONDA_FILE}
+
+
+ENV PATH=$PATH:/opt/miniconda3/bin
+
+RUN conda update conda --yes
+RUN conda install mamba -n base -c conda-forge --yes
+
+RUN conda create -n cling python=3.12.8 --yes 
+RUN conda init
+
+
+RUN /bin/bash -c "source activate cling && mamba install xeus-cling -c conda-forge --yes && jupyter kernelspec install /opt/miniconda3/envs/cling/share/jupyter/kernels/xcpp17 --sys-prefix"
+
+# Install IJava kernel
+# ===================
+USER $USER
+WORKDIR /home/$USER
+RUN mkdir install
+RUN cd install &&  git clone https://github.com/SpencerPark/IJava.git
+RUN cd install/IJava && ./gradlew installKernel
+RUN rm -rf install
+
+
+USER root
+
+# Apache server port
+EXPOSE 80
+
+# Jupyter server port
+EXPOSE 8888
+
+ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+
+WORKDIR /home/$USER/
+
+
+
+
+
+
+
+

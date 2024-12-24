@@ -1,0 +1,33 @@
+# syntax=docker/dockerfile:1
+
+FROM gastudil/courses:jappy-base
+
+ARG USER=devuser
+ARG IMAGE_DIR=https://raw.githubusercontent.com/g-courses/jappy.rc/refs/heads/main/image_dir
+
+
+# Install VS Code server and extensions
+# =====================================
+#COPY --chown=$USER:www-data image_dir/tmp/vscode.sh /tmp/vscode.sh
+ADD $IMAGE_DIR/tmp/vscode.sh /tmp/vscode.sh
+RUN chown $USER:www-data /tmp/vscode.sh && chmod +x /tmp/vscode.sh
+RUN /tmp/vscode.sh
+RUN rm /tmp/vscode.sh
+
+RUN cd /home/$USER && mkdir -p workspace
+
+WORKDIR /home/$USER/
+
+USER root
+ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+
+
+
+
+
+
+
+
+
+
+
