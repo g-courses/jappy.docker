@@ -11,7 +11,7 @@ FROM ubuntu:${UBUNTU_VERSION}
 
 
 LABEL "mantainer"="Gabriel Astudillo Muñoz (gabriel.astudillo@uv.cl)" 
-LABEL "description"="JAPPY: Environment for developing JAva, cPP (C++) and pYthon programming classes" 
+LABEL "description"="JAPPY: Educational resource for programming classes in Java, cPP (C++) and Python" 
 	  
 
 ARG USER=devuser

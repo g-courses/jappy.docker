@@ -7,6 +7,8 @@
 
 FROM gastudil/courses:jappy-base
 
+LABEL "description"="JAPPY-vscode: Educational resource for programming classes in Java, cPP (C++) and Python with vscode and devcontainer" 
+
 ARG USER=devuser
 ARG IMAGE_DIR=https://raw.githubusercontent.com/g-courses/jappy.rc/refs/heads/main/image_dir
 
