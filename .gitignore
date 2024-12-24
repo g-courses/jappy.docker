@@ -1,4 +1,5 @@
 .DS_*
+.ipynb_checkpoints
 # User-specific files
 *.rsuser
 *.suo
