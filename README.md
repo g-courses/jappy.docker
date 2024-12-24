@@ -25,10 +25,12 @@ When deploying this setup, docker compose maps the container port 8888 to port 8
 
 ```
 $ docker compose up -d
+```
+><pre>
 >[+] Running 2/2
 > ✔ Network jupyteronly_back_net  Created                                                                                               0.0s 
 > ✔ Container dev-jappy           Started  
-```
+></pre>
 
 ### Expected result
 
