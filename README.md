@@ -19,7 +19,7 @@ services:
     ...
 ```
 
-When deploying this setup, docker compose maps the container port 8888 to port 8888 of the host as specified in the compose file.
+When deploying this setup, docker compose maps the container port `8888/tcp` to port `8888/tcp` of the host as specified in the compose file.
 
 ### Deploy with docker compose
 
