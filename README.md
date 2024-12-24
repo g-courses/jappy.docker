@@ -35,6 +35,8 @@ When you run this command, the following output is expected:
 > ✔ Container dev-jappy           Started  
 ></pre>
 
+**Note:** The docker compose file maps the local directory named `workspace` to the `/home/devuser/workspace directory located in the container. This allows work files to be stored in the container and persisted on the host.
+
 Optionally, you can check that containers are running and port mapping:
 
 ```
