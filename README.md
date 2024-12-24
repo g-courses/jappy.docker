@@ -26,20 +26,24 @@ When deploying this setup, docker compose maps the container port 8888 to port 8
 ```
 $ docker compose up -d
 ```
+
+When you run this command, the following output is expected:
+
 ><pre>
 >[+] Running 2/2
 > ✔ Network jupyteronly_back_net  Created                                                                                               0.0s 
 > ✔ Container dev-jappy           Started  
 ></pre>
 
-### Expected result
+Optionally, you can check that containers are running and port mapping:
 
-Check containers are running and the port mapping:
 ```
 $ docker compose ps
-NAME        IMAGE                            COMMAND                  SERVICE   CREATED          STATUS          PORTS
-dev-jappy   gastudil/courses:jappy-jupyter   "/usr/bin/supervisor…"   jappy     42 seconds ago   Up 41 seconds   80/tcp, 0.0.0.0:8888->8888/tcp
 ```
+><pre>
+>NAME        IMAGE                            COMMAND                  SERVICE   CREATED          STATUS          PORTS
+>dev-jappy   gastudil/courses:jappy-jupyter   "/usr/bin/supervisor…"   jappy     42 seconds ago   Up 41 seconds   80/tcp, 0.0.0.0:8888->8888/tcp
+><pre>
 
 Navigate to `http://localhost:8888` in your web browser to access Jupyter server. This jupyter server contains the kernels for Python, Java and C++.
 
