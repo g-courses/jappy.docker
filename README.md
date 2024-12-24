@@ -4,4 +4,45 @@ JAPPY is a development environment designed as an educational resource for progr
 
 ### Using a Jupyter client
 
-Para utilizar JAPPY con un client Jupyter, se debe utilizar el archivo [_docker-compose_](jupyter.only/docker-compose.yml) disponible en el directorio _jupyter.only_
+To use JAPPY with a Jupyter client, you must use the [_docker-compose_](jupyter.only/docker-compose.yml) file available in the [_jupyter.only_](jupyter.only/) directory.
+
+```
+services:
+  jappy:
+    image: gastudil/courses:jappy-jupyter
+    container_name: dev-jappy
+    hostname: dev-jappy
+    ports:
+      - 8888:8888
+    volumes:
+      - ./workspace:/home/devuser/workspace
+    ...
+```
+
+When deploying this setup, docker compose maps the container port 8888 to port 8888 of the host as specified in the compose file.
+
+### Deploy with docker compose
+
+```
+$ docker compose up -d
+[+] Running 2/2
+ ✔ Network jupyteronly_back_net  Created                                                                                               0.0s 
+ ✔ Container dev-jappy           Started  
+```
+
+### Expected result
+
+Check containers are running and the port mapping:
+```
+$ docker compose ps
+NAME        IMAGE                            COMMAND                  SERVICE   CREATED          STATUS          PORTS
+dev-jappy   gastudil/courses:jappy-jupyter   "/usr/bin/supervisor…"   jappy     42 seconds ago   Up 41 seconds   80/tcp, 0.0.0.0:8888->8888/tcp
+```
+
+Navigate to `http://localhost:8888` in your web browser to access Jupyter server. This jupyter server contains the kernels for Python, Java and C++.
+
+Stop and remove the containers
+
+```
+$ docker compose down
+```

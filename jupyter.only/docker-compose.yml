@@ -10,6 +10,5 @@ services:
     networks:
       - back_net
 
-      
 networks:
   back_net:
