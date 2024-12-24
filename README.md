@@ -1,3 +1,5 @@
 ## JAPPY: Educational resource for programming classes in **JA**va, c**PP** (C++) and p**Y**thon
 
-JAPPY es un entorno de desarrollo pensado como recurso educativo para clases de programación que utilicen Java, C++ o Python. Se puede utilizar en forma indepediente a través de un cliente Jupyter conectado al puerto `8888:tcp` o a través del IDE VSCode.
+JAPPY is a development environment designed as an educational resource for programming classes using Java, C++ or Python. It can be used independently through a) a Jupyter client connected to port `8888:tcp` or b) using the VSCode IDE with the devcontainer plugin.
+
+### Using a Jupyter client
