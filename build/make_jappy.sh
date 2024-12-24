@@ -5,7 +5,7 @@ PLATFORM=linux/amd64,linux/arm64
 NO_CACHE=--no-cache 
 
 case $1 in
-    base)
+    jupyter)
         docker build $NO_CACHE --platform=$PLATFORM --tag=gastudil/courses:jappy-jupyter -f Dockerfile-base .
         ;;
     vscode)
