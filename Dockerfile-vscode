@@ -1,4 +1,9 @@
-# syntax=docker/dockerfile:1
+# Dockerfile para JAPPY versión devcontainer con vscode
+# Dependencias:
+#   imagen docker: gastudil/courses:jappy-base
+#   archivos     : https://github.com/g-courses/jappy.rc
+#
+# Version 1.0
 
 FROM gastudil/courses:jappy-base
 

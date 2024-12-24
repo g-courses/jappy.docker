@@ -1,4 +1,10 @@
-# syntax=docker/dockerfile:1
+# Dockerfile para JAPPY base
+# Dependencias:
+#   imagen docker: ubuntu:22.04
+#   archivos     : https://github.com/g-courses/jappy.rc
+#
+# Version 1.0
+
 ARG UBUNTU_VERSION=22.04
 
 FROM ubuntu:${UBUNTU_VERSION}
