@@ -1,11 +1,11 @@
 # Dockerfile para JAPPY versión devcontainer con vscode
 # Dependencias:
-#   imagen docker: gastudil/courses:jappy-base
+#   imagen docker: gastudil/courses:jappy-jupyter
 #   archivos     : https://github.com/g-courses/jappy.rc
 #
 # Version 1.0
 
-FROM gastudil/courses:jappy-base
+FROM gastudil/courses:jappy-jupyter
 
 LABEL "description"="JAPPY-vscode: Educational resource for programming classes in Java, cPP (C++) and Python with vscode and devcontainer" 
 

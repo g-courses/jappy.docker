@@ -6,7 +6,7 @@ NO_CACHE=--no-cache
 
 case $1 in
     base)
-        docker build $NO_CACHE --platform=$PLATFORM --tag=gastudil/courses:jappy-base -f Dockerfile-base .
+        docker build $NO_CACHE --platform=$PLATFORM --tag=gastudil/courses:jappy-jupyter -f Dockerfile-base .
         ;;
     vscode)
         docker build $NO_CACHE --platform=$PLATFORM --tag=gastudil/courses:jappy-vscode -f Dockerfile-vscode . 
