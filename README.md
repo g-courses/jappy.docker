@@ -60,9 +60,9 @@ $ docker compose ps
 
 Navigate to `http://localhost:8888` in your web browser to access Jupyter server. This jupyter server contains the kernels for Python, Java and C++.
 
-<center>
+<div align="center">
 <img src="imgs/jupyter-window.jpg" width="80%">
-</center>
+</div>
 
 Finally, to stop and remove the containers:
 
