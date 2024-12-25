@@ -19,7 +19,7 @@ services:
     ...
 ```
 
-When deploying this setup, docker compose maps the container port `8888/tcp` to port `8888/tcp` of the host as specified in the compose file.
+When deploying this setup, docker compose maps the container port `8888/tcp` to port `8888/tcp` of the host as specified in the compose file. Also, the docker compose file maps the local directory named `workspace` to the `/home/devuser/workspace` directory located in the container. This allows work files to be stored in the container and persisted on the host.
 
 #### Deploy with docker compose
 
@@ -34,8 +34,6 @@ When you run this command, the following output is expected:
 > ✔ Network jupyteronly_back_net  Created                                                                                               0.0s 
 > ✔ Container dev-jappy           Started  
 ></pre>
-
-**Note:** The docker compose file maps the local directory named `workspace` to the `/home/devuser/workspace` directory located in the container. This allows work files to be stored in the container and persisted on the host.
 
 Optionally, you can check that containers are running and port mapping:
 
