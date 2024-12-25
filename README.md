@@ -17,6 +17,7 @@ services:
     volumes:
       - ./workspace:/home/devuser/workspace
     ...
+```
 
 Assuming the [_docker-compose.yml_](jupyter.only/docker-compose.yml)  file is copied to a directory called `classroom`, a possible file structure to use with JAPPY is:
 
@@ -26,6 +27,7 @@ classroom/
 ```
 
 When deploying this setup, docker compose maps the container port `8888/tcp` to port `8888/tcp` of the host as specified in the compose file. Also, the docker compose file maps the local directory named `workspace` to the `/home/devuser/workspace` directory located in the container. This allows work files to be stored in the container and persisted on the host. When the container is started, if the workspace directory does not exist, it is automatically created.
+
 ```
 .
 ├── workspace/
