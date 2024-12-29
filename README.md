@@ -61,7 +61,7 @@ $ docker compose ps
 Navigate to `http://localhost:8888` in your web browser to access Jupyter server. This jupyter server contains the kernels for Python, Java and C++. The *Jupyter Server Root* is mapped to current directory in the host (`classroom` directory in this example). The local directory `workspace`in the host is mapped to `/home/devuser/workspace` in the container.
 
 <div align="center">
-<img src="imgs/jupyter-dirs.png" width="80%">
+<img src="imgs/jupyter-dirs-00.png" width="80%">
 </div>
 
 Finally, to stop and remove the containers:
