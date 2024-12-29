@@ -58,10 +58,10 @@ $ docker compose ps
 >dev-jappy   gastudil/courses:jappy-jupyter   "/usr/bin/supervisor…"   jappy     42 seconds ago   Up 41 seconds   80/tcp, 0.0.0.0:8888->8888/tcp
 ><pre>
 
-Navigate to `http://localhost:8888` in your web browser to access Jupyter server. This jupyter server contains the kernels for Python, Java and C++.
+Navigate to `http://localhost:8888` in your web browser to access Jupyter server. This jupyter server contains the kernels for Python, Java and C++. The *Jupyter Server Root* is mapped to current directory in the host (`classroom` directory in this example). The local directory `workspace`in the host is mapped to `/home/devuser/workspace` in the container.
 
 <div align="center">
-<img src="imgs/jupyter-window.png" width="80%">
+<img src="imgs/jupyter-dirs.png" width="80%">
 </div>
 
 Finally, to stop and remove the containers:
