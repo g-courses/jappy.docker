@@ -8,13 +8,9 @@
     // Permite sobrescribir el ENTRYPOINT
     "overrideCommand": false, 
     "command":"/usr/bin/supervisord -c /etc/supervisord.conf",
-    //"command": "/usr/local/bin/jupyter notebook  --ip='*' --NotebookApp.token='' --NotebookApp.password='' --allow-root", 
-    //"command": "/bin/sh -c 'sudo /usr/local/bin/jupyter notebook  --ip='*' --NotebookApp.token='' --NotebookApp.password='' --allow-root'", 
-    
   
     "workspaceMount": "source=${localWorkspaceFolder},target=/home/devuser/workspace/${localWorkspaceFolderBasename},type=bind,consistency=consistent",
     "workspaceFolder": "/home/devuser/workspace/",
-
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -30,7 +26,7 @@
 	"customizations": {
 	        "vscode": {
 				"settings": {
-					"extensions.ignoreRecommendations": true,
+                    "extensions.ignoreRecommendations": true,
 					//"editor.inlineSuggest.enabled": false,
 					//"editor.inlineSuggest.showToolbar": "never",
 					//"editor.quickSuggestions": {

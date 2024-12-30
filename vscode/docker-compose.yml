@@ -8,6 +8,8 @@ services:
       - 8888:8888
     volumes:
       - ./workspace:/home/devuser/workspace
+    environment:
+      WORKSPACE: /home/devuser/workspace
     networks:
       - back_net
 
