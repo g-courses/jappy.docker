@@ -1,5 +1,6 @@
 services:
   jappy:
+    #platform: linux/am64
     image: gastudil/courses:jappy-jupyter
     container_name: dev-jappy
     hostname: dev-jappy

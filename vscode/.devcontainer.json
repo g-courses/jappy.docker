@@ -1,39 +1,27 @@
 {
 	"name": "inf214-uv",	
-	"image":"gastudil/courses:jappy-vscode",
-	"runArgs": [
-        "--platform","linux/amd64",
-		"--init",
-		"--rm",
-		"--hostname", "inf214-uv",
-        //"--user","devuser",
-		"-p", "8080:80",            // Redirige el puerto 80 del contenedor al puerto 8080 del anfitrión
-		"-p", "8888:8888"           // Redirige el puerto 8888 del contenedor al puerto 8888 del anfitrión
-	],
-	  
-	// Permite sobrescribir el ENTRYPOINT
-	"overrideCommand": false, 
+    "dockerComposeFile": "docker-compose.yml"
+    "service": "jappy",
+    "remoteUser": "devuser",
+    "runArgs": ["--rm"]
+    
+    // Permite sobrescribir el ENTRYPOINT
+    "overrideCommand": false, 
     "command":"/usr/bin/supervisord -c /etc/supervisord.conf",
     //"command": "/usr/local/bin/jupyter notebook  --ip='*' --NotebookApp.token='' --NotebookApp.password='' --allow-root", 
     //"command": "/bin/sh -c 'sudo /usr/local/bin/jupyter notebook  --ip='*' --NotebookApp.token='' --NotebookApp.password='' --allow-root'", 
     
   
-	//"workspaceMount": "source=${localWorkspaceFolder},target=/home/devuser/workspace/${localWorkspaceFolderBasename},type=bind,consistency=consistent",
-	//"workspaceFolder": "/home/devuser/workspace",
-	"workspaceMount": "source=${localWorkspaceFolder},target=/home/devuser/workspace/${localWorkspaceFolderBasename},type=bind,consistency=consistent",
-	"workspaceFolder": "/home/devuser/workspace/",
-	
-	
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/devuser/workspace/${localWorkspaceFolderBasename},type=bind,consistency=consistent",
+    "workspaceFolder": "/home/devuser/workspace/",
+
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [80,8888],
+	"forwardPorts": [8888],
 	"portsAttributes": {
-	    "80": {
-	      "label": "Apache web server"
-	    },
 	    "8888": {
 	      "label": "Jupyter server"
 	    }
@@ -101,8 +89,6 @@
 					// Incluya las extensiones sus extensiones a continuacion
 				]
 	        }
-	},
-
-	"remoteUser": "devuser"
+	}
 }
 
