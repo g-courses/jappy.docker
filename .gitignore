@@ -1,6 +1,7 @@
 .DS_*
 .ipynb_checkpoints
 workspace
+__pycache__
 # User-specific files
 *.rsuser
 *.suo
