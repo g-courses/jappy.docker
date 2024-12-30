@@ -1,9 +1,9 @@
 {
-	"name": "inf214-uv",	
+	//"name": "inf214-uv",	
     "dockerComposeFile": "docker-compose.yml"
     "service": "jappy",
     "remoteUser": "devuser",
-    "runArgs": ["--rm"]
+    //"runArgs": ["--rm"]
     
     // Permite sobrescribir el ENTRYPOINT
     "overrideCommand": false, 
