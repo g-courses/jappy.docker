@@ -25,8 +25,8 @@ RUN rm /tmp/vscode.sh
 # =====================================
 
 WORKDIR /home/$USER/
-RUN mkdir -p .libs/jappy.d/
 ADD $IMAGE_DIR/opt/libs/jappy.d/jappy_utils.py /opt/libs/jappy.d/jappy_utils.py
+RUN chmod +r /opt/libs/jappy.d/jappy_utils.py
 RUN mkdir -p workspace
 
 USER root
