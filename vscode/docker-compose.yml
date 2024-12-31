@@ -1,7 +1,7 @@
 services:
   jappy:
     platform: linux/amd64
-    image: gastudil/courses:jappy-jupyter
+    image: gastudil/courses:jappy-vscode
     container_name: dev-jappy
     hostname: dev-jappy
     ports:
