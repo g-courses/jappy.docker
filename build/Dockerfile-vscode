@@ -15,18 +15,23 @@ ARG IMAGE_DIR=https://raw.githubusercontent.com/g-courses/jappy.rc/refs/heads/ma
 
 # Install VS Code server and extensions
 # =====================================
-#COPY --chown=$USER:www-data image_dir/tmp/vscode.sh /tmp/vscode.sh
 ADD $IMAGE_DIR/tmp/vscode.sh /tmp/vscode.sh
 RUN chown $USER:www-data /tmp/vscode.sh && chmod +x /tmp/vscode.sh
-RUN /tmp/vscode.sh
-RUN rm /tmp/vscode.sh
+#RUN /tmp/vscode.sh
+#RUN rm /tmp/vscode.sh
 
-RUN cd /home/$USER && mkdir -p workspace
+
+# Install jappy utils modules
+# =====================================
 
 WORKDIR /home/$USER/
+RUN mkdir -p .libs/jappy.d/
+ADD $IMAGE_DIR/opt/libs/jappy.d/jappy_utils.py .libs/jappy.d/jappy_utils.py
+RUN mkdir -p workspace
 
 USER root
-ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+ENV PYTHONPATH=/home/$USER/.libs/jappy.d/
+#ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
 
 
