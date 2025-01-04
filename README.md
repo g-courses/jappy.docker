@@ -47,8 +47,8 @@ When you run this command, the following output is expected:
 
 ><pre>
 >[+] Running 2/2
-> ✔ Network jupyteronly_back_net  Created                                                                                               0.0s 
-> ✔ Container dev-jappy           Started  
+> ✔ Network classroom_back_net  Created
+> ✔ Container dev-jappy         Started
 ></pre>
 
 Optionally, you can check that containers are running and port mapping:
