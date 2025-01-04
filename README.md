@@ -4,22 +4,25 @@ JAPPY is a development environment designed as an educational resource for progr
 
 ### Using a Jupyter client
 
-To use JAPPY with a Jupyter client, you must use the [_docker-compose.yml_](jupyter.only/docker-compose.yml) file available in the [_jupyter.only_](jupyter.only/) directory.
+To use JAPPY with a Jupyter client, you must use the [_docker-compose.yml_](classroom/docker-compose.yml) file available in the [_classroom_](classroom/) directory.
 
 ```
 services:
   jappy:
-    image: gastudil/courses:jappy-jupyter
+    platform: linux/amd64
+    image: gastudil/courses:jappy-vscode
     container_name: dev-jappy
     hostname: dev-jappy
     ports:
       - 8888:8888
     volumes:
       - ./workspace:/home/devuser/workspace
+    environment:
+      WORKSPACE: /home/devuser/workspace
     ...
 ```
 
-Assuming the [_docker-compose.yml_](jupyter.only/docker-compose.yml)  file is copied to a directory called `classroom`, a possible file structure to use with JAPPY is:
+Assuming the [_docker-compose.yml_](classroom/docker-compose.yml)  file is copied to a directory called `classroom`, a possible file structure to use with JAPPY is:
 
 ><pre>
 >classroom/
