@@ -28,6 +28,8 @@ ADD $IMAGE_DIR/etc/supervisord.conf /etc/
 USER root
 ENV PYTHONPATH=/opt/libs/jappy.d/
 ENV JUPYTER_NO_ANNOUNCEMENTS=1
+ENV WORKSPACE=/home/devuser/workspace
+
 RUN /usr/local/bin/jupyter labextension disable "@jupyterlab/apputils-extension:announcements"
 ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
