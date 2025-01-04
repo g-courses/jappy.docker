@@ -5,7 +5,7 @@
 #
 # Version 1.0
 
-FROM gastudil/courses:jappy-latest
+FROM gastudil/courses:jappy-vscode
 
 LABEL "description"="JAPPY-vscode: Educational resource for programming classes in Java, cPP (C++) and Python with vscode and devcontainer (last update)" 
 
