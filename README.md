@@ -21,6 +21,7 @@ services:
       WORKSPACE: /home/devuser/workspace
     ...
 ```
+>Note: If the host is a computer with arm architecture (for example, mac computers with Mx processor), the `platform` field must be changed to `linux/arm64`.
 
 Assuming the [_docker-compose.yml_](classroom/docker-compose.yml)  file is copied to a directory called `classroom`, a possible file structure to use with JAPPY is:
 
@@ -56,6 +57,7 @@ Optionally, you can check that containers are running and port mapping:
 ```
 $ docker compose ps
 ```
+
 ><pre>
 >NAME        IMAGE                            COMMAND                  SERVICE   CREATED          STATUS          PORTS
 >dev-jappy   gastudil/courses:jappy-jupyter   "/usr/bin/supervisor…"   jappy     42 seconds ago   Up 41 seconds   80/tcp, 0.0.0.0:8888->8888/tcp
