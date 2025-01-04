@@ -11,7 +11,10 @@ case $1 in
     vscode)
         docker build $NO_CACHE --platform=$PLATFORM --tag=gastudil/courses:jappy-vscode -f Dockerfile-vscode . 
         ;;
+    latest)
+        docker build $NO_CACHE --platform=$PLATFORM --tag=gastudil/courses:jappy-latest -f Dockerfile-latest . 
+        ;;
     *)
-        printf "Uso: $0 jupyter|vscode\n"
+        printf "Uso: $0 jupyter|vscode|latest\n"
         ;;
 esac

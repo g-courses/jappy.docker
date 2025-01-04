@@ -1,0 +1,41 @@
+# Dockerfile para JAPPY versión devcontainer con vscode
+# Dependencias:
+#   imagen docker: gastudil/courses:jappy-jupyter
+#   archivos     : https://github.com/g-courses/jappy.rc
+#
+# Version 1.0
+
+FROM gastudil/courses:jappy-latest
+
+LABEL "description"="JAPPY-vscode: Educational resource for programming classes in Java, cPP (C++) and Python with vscode and devcontainer (last update)" 
+
+ARG USER=devuser
+ARG IMAGE_DIR=https://raw.githubusercontent.com/g-courses/jappy.rc/refs/heads/main/image_dir
+
+# Install jappy utils modules
+# =====================================
+
+WORKDIR /home/$USER/
+ADD $IMAGE_DIR/opt/libs/jappy.d/jappy_utils.py /opt/libs/jappy.d/jappy_utils.py
+RUN chmod +r /opt/libs/jappy.d/jappy_utils.py
+RUN mkdir -p workspace
+
+# update apache and supervisord config files
+# ==========================================
+ADD $IMAGE_DIR/etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/
+ADD $IMAGE_DIR/etc/supervisord.conf /etc/
+
+USER root
+ENV PYTHONPATH=/opt/libs/jappy.d/
+ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+
+
+
+
+
+
+
+
+
+
+
