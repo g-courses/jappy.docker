@@ -29,8 +29,10 @@ USER root
 ENV PYTHONPATH=/opt/libs/jappy.d/
 ENV JUPYTER_NO_ANNOUNCEMENTS=1
 ENV WORKSPACE=/home/devuser/workspace
+RUN mamba install -c conda-forge jupyter-collaboration
 
 RUN /usr/local/bin/jupyter labextension disable "@jupyterlab/apputils-extension:announcements"
+RUN /usr/local/bin/jupyter labextension disable "@jupyterlab/extensionmanager-extension"
 ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
 
