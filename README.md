@@ -115,4 +115,7 @@ To use JAPPY with VS Code, you must use the [_docker-compose.yml_](classroom/doc
 >}
 >```
 
+It is recommended to enable the "Open with VS Code" option. On Windows, this option is enabled during the Docker Desktop installation. On MacOS, the procedure described in [_this file_](vscode-macos-menu-contextual.md) should be performed.
+
+
 </details>
