@@ -4,6 +4,9 @@ JAPPY (**JA**va, c**PP** and p**Y**thon) is a development environment designed a
 
 ### Using a Jupyter client
 
+<details>
+<summary>Show</summary>
+
 To use JAPPY with a Jupyter client, you must use the [_docker-compose.yml_](classroom/docker-compose.yml) file available in the [_classroom_](classroom/) directory.
 
 ```
@@ -38,8 +41,6 @@ When deploying this setup, docker compose maps the container port `8888/tcp` to 
 
 #### Deploy with docker compose
 
-<details>
-<summary>Show</summary>
 ```
 $ docker compose up -d
 ```
