@@ -82,7 +82,7 @@ $ docker compose down
 <details>
 <summary>Show</summary>
 
-To use JAPPY with VS Code, you must use the [_docker-compose.yml_](classroom/docker-compose.yml) and [_.devcontainer_](classroom/.devcontainer) files available in the classroom directory.
+To use JAPPY with VS Code, you must use the [_docker-compose.yml_](classroom/docker-compose.yml) and [_.devcontainer.json_](classroom/.devcontainer.json) files available in the classroom directory.
 
 
 </details>
