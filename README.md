@@ -38,6 +38,8 @@ When deploying this setup, docker compose maps the container port `8888/tcp` to 
 
 #### Deploy with docker compose
 
+<details>
+<summary>Show</summary>
 ```
 $ docker compose up -d
 ```
@@ -72,3 +74,4 @@ Finally, to stop and remove the containers:
 ```
 $ docker compose down
 ```
+</details>
