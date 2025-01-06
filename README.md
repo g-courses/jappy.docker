@@ -132,5 +132,9 @@ Once the directory is filled with files, you must open the directory with VS Cod
 <img src="imgs/vscode-dirs-01.jpg" width="70%">
 </div>
 
+<div align="center">
+<img src="imgs/vscode-seq-01.jpg" width="70%">
+</div>
+
 
 </details>
