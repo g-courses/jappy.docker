@@ -26,7 +26,9 @@ ADD $IMAGE_DIR/etc/apache2/sites-available/000-default.conf /etc/apache2/sites-a
 ADD $IMAGE_DIR/etc/supervisord.conf /etc/
 
 # update kernels icons
-ADD $IMAGE_DIR/icons/java/logo* .local/share/jupyter/kernels/java/
+ADD $IMAGE_DIR/icons/java/logo-32x32.png .local/share/jupyter/kernels/java/
+ADD $IMAGE_DIR/icons/java/logo-64x64.png .local/share/jupyter/kernels/java/
+RUN chown $USER:www-data .local/share/jupyter/kernels/java/logo*.png
 
 USER root
 ENV PYTHONPATH=/opt/libs/jappy.d/
@@ -34,8 +36,10 @@ ENV JUPYTER_NO_ANNOUNCEMENTS=1
 ENV WORKSPACE=/home/devuser/workspace
 ENV SHELL=/bin/bash
 
+
 RUN /usr/local/bin/jupyter labextension disable "@jupyterlab/apputils-extension:announcements"
 RUN /usr/local/bin/jupyter labextension disable "@jupyterlab/extensionmanager-extension"
+
 ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
 
