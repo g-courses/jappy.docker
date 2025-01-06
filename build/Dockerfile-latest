@@ -25,6 +25,9 @@ RUN mkdir -p workspace
 ADD $IMAGE_DIR/etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/
 ADD $IMAGE_DIR/etc/supervisord.conf /etc/
 
+# update kernels icons
+ADD $IMAGE_DIR/icons/java/logo* .local/share/jupyter/kernels/java/
+
 USER root
 ENV PYTHONPATH=/opt/libs/jappy.d/
 ENV JUPYTER_NO_ANNOUNCEMENTS=1
