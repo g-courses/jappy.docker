@@ -1,6 +1,6 @@
-## JAPPY: Educational resource for programming classes in **JA**va, c**PP** (C++) and p**Y**thon
+## JAPPY: Educational resource for programming classes in  Java,  C++ and Python
 
-JAPPY is a development environment designed as an educational resource for programming classes using Java, C++ or Python. It can be used independently through a) a Jupyter client connected to port `8888/tcp` (i.e. a web browser) or b) using the VSCode IDE with the *devcontainer* plugin.
+JAPPY (**JA**va, c**PP** and p**Y**thon) is a development environment designed as an educational resource for programming classes using Java, C++ or Python. It can be used independently through a) a Jupyter client connected to port `8888/tcp` (i.e. a web browser) or b) using the VSCode IDE with the *devcontainer* plugin.
 
 ### Using a Jupyter client
 
@@ -17,8 +17,6 @@ services:
       - 8888:8888
     volumes:
       - ./workspace:/home/devuser/workspace
-    environment:
-      WORKSPACE: /home/devuser/workspace
     ...
 ```
 >Note: If the host is a computer with arm architecture (for example, mac computers with Mx processor), the `platform` field must be changed to `linux/arm64`.
