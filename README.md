@@ -144,4 +144,9 @@ The *WORKPACE[...]* environment is mapped to `workspace` directory in the host. 
 <img src="imgs/vscode-arch-01.jpg" width="100%">
 </div>
 
+> Note: It is worth remembering that the files inside the workspace directory are processed inside the container with the tools that it has installed.
+
 </details>
+
+
+
