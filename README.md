@@ -126,4 +126,11 @@ Assuming both files ([_docker-compose.yml_](classroom/docker-compose.yml)  and [
 >    └── docker-compose.yml
 ></pre>
 
+Once the directory is filled with files, you must open the directory with VS Code. One way to do this is through the context menu shown in the following figure:
+
+<div align="center">
+<img src="imgs/vscode-dirs-00.jpg" width="90%">
+</div>
+
+
 </details>
