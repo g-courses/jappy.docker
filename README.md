@@ -138,5 +138,10 @@ The first time the container is created, the development environment's dependenc
 <img src="imgs/vscode-seq-01.jpg" width="100%">
 </div>
 
+The *WORKPACE[...]* environment is mapped to `workspace` directory in the host. The local directory `workspace`in the host is mapped to `/home/devuser/workspace` in the container.
+
+<div align="center">
+<img src="imgs/vscode-arch-01.jpg" width="100%">
+</div>
 
 </details>
