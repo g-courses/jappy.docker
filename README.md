@@ -5,7 +5,7 @@ JAPPY (**JA**va, c**PP** and p**Y**thon) is a development environment designed a
 ### Using a Jupyter client
 
 <details>
-<summary>Show</summary>
+<summary>First time steps</summary>
 
 To use JAPPY with a Jupyter client, you must use the [_docker-compose.yml_](classroom/docker-compose.yml) file available in the [_classroom_](classroom/) directory.
 
@@ -75,6 +75,13 @@ Finally, to stop and remove the containers:
 ```
 $ docker compose down
 ```
+</details>
+
+<details>
+<summary>Use example</summary>
+
+Nulla auctor leo eget ultricies laoreet. Etiam purus enim, vestibulum aliquam sem ut, pharetra semper nisl. Integer sit amet consequat erat, a posuere leo. Suspendisse scelerisque tincidunt vehicula. Sed efficitur est leo, nec pellentesque ligula tincidunt sit amet. Cras scelerisque eleifend sodales. Etiam venenatis, justo eget ultricies consectetur, mauris ligula facilisis ipsum, nec dignissim odio arcu in quam.
+
 </details>
 
 ### Using VS Code
@@ -150,5 +157,8 @@ The *WORKPACE[...]* environment is mapped to `workspace` directory in the host. 
 
 <details>
 <summary>Use example</summary>
+
+Nulla auctor leo eget ultricies laoreet. Etiam purus enim, vestibulum aliquam sem ut, pharetra semper nisl. Integer sit amet consequat erat, a posuere leo. Suspendisse scelerisque tincidunt vehicula. Sed efficitur est leo, nec pellentesque ligula tincidunt sit amet. Cras scelerisque eleifend sodales. Etiam venenatis, justo eget ultricies consectetur, mauris ligula facilisis ipsum, nec dignissim odio arcu in quam.
+
 </details>
 
