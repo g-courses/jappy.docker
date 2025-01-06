@@ -139,6 +139,12 @@ Once the directory is filled with files, you must open the directory with VS Cod
 <img src="imgs/vscode-dirs-01.jpg" width="70%">
 </div>
 
+When you open the directory with VS Code (with the devcontainer plugin enabled), the folder should reopen in the container:
+
+<div align="center">
+<img src="imgs/vscode-open-01.jpg" width="100%">
+</div>
+
 The first time the container is created, the development environment's dependencies are installed. When this process completes (VS Code plugins icon without prompts), the development environment is ready to use.
 
 <div align="center">
