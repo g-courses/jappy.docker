@@ -27,7 +27,9 @@ RUN apt update && apt -y upgrade
 RUN apt install --no-install-recommends --yes \
     sudo apache2    \
     make g++ cmake  \
+    libboost-all-dev \
     vim             \
+    nano            \
     locales         \
     jq              \
     bc              \
@@ -59,7 +61,8 @@ RUN adduser --gecos "" --disabled-password --ingroup www-data ${USER} \
 
 ARG IMAGE_DIR=https://raw.githubusercontent.com/g-courses/jappy.rc/refs/heads/main/image_dir
 ADD $IMAGE_DIR/etc/pip.conf /etc/pip.conf
-RUN pip3 install notebook matplotlib pandas geojson plotly 
+
+RUN pip3 install notebook matplotlib pandas geojson plotly iplantuml ipydrawio
 
 RUN ldconfig
 

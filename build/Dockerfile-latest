@@ -30,8 +30,7 @@ ENV PYTHONPATH=/opt/libs/jappy.d/
 ENV JUPYTER_NO_ANNOUNCEMENTS=1
 ENV WORKSPACE=/home/devuser/workspace
 ENV SHELL=/bin/bash
-RUN pip3 install iplantuml
-RUN pip3 install ipydrawio
+
 RUN /usr/local/bin/jupyter labextension disable "@jupyterlab/apputils-extension:announcements"
 RUN /usr/local/bin/jupyter labextension disable "@jupyterlab/extensionmanager-extension"
 ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
