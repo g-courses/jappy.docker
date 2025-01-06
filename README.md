@@ -84,35 +84,35 @@ $ docker compose down
 
 To use JAPPY with VS Code, you must use the [_docker-compose.yml_](classroom/docker-compose.yml) and [_.devcontainer.json_](classroom/.devcontainer.json) files available in the classroom directory.
 
-`docker-compose.yml` file: 
-
-```
-services:
-  jappy:
-    platform: linux/amd64
-    image: gastudil/courses:jappy-vscode
-    container_name: dev-jappy
-    hostname: dev-jappy
-    ports:
-      - 8888:8888
-    volumes:
-      - ./workspace:/home/devuser/workspace
-    ...
-```
-
-
-`.devcontainer.json` file:
-
-```
-{
-    "dockerComposeFile": "docker-compose.yml",
-    "service": "jappy",
-    "remoteUser": "devuser",
-    
-    "workspaceMount": "source=${localWorkspaceFolder},target=/home/devuser/workspace/${localWorkspaceFolderBasename},type=bind,consistency=consistent",
-    "workspaceFolder": "/home/devuser/workspace",
-    ...
-}
-```
+>`docker-compose.yml` file: 
+>
+>```
+>services:
+>  jappy:
+>    platform: linux/amd64
+>    image: gastudil/courses:jappy-vscode
+>    container_name: dev-jappy
+>    hostname: dev-jappy
+>    ports:
+>      - 8888:8888
+>    volumes:
+>      - ./workspace:/home/devuser/workspace
+>    ...
+>```
+>
+>
+>`.devcontainer.json` file:
+>
+>```
+>{
+>    "dockerComposeFile": "docker-compose.yml",
+>    "service": "jappy",
+>    "remoteUser": "devuser",
+>    
+>    "workspaceMount": "source=${localWorkspaceFolder},target=/home/devuser/workspace/${localWorkspaceFolderBasename},type=bind,consistency=consistent",
+>    "workspaceFolder": "/home/devuser/workspace",
+>    ...
+>}
+>```
 
 </details>
