@@ -20,17 +20,7 @@ RUN chown $USER:www-data /tmp/vscode.sh && chmod +x /tmp/vscode.sh
 RUN /tmp/vscode.sh
 RUN rm /tmp/vscode.sh
 
-
-# Install jappy utils modules
-# =====================================
-
-WORKDIR /home/$USER/
-ADD $IMAGE_DIR/opt/libs/jappy.d/jappy_utils.py /opt/libs/jappy.d/jappy_utils.py
-RUN chmod +r /opt/libs/jappy.d/jappy_utils.py
-RUN mkdir -p workspace
-
 USER root
-ENV PYTHONPATH=/opt/libs/jappy.d/
 ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
 
