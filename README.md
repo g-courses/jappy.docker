@@ -76,3 +76,10 @@ Finally, to stop and remove the containers:
 $ docker compose down
 ```
 </details>
+
+### Using VS Code
+
+<details>
+<summary>Show</summary>
+
+<details>
