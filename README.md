@@ -39,7 +39,12 @@ When deploying this setup, docker compose maps the container port `8888/tcp` to 
 >    └── docker-compose.yml
 ></pre>
 
+</details>
+
 #### Deploy with docker compose
+
+<details>
+<summary>First time steps</summary>
 
 ```
 $ docker compose up -d
