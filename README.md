@@ -74,7 +74,7 @@ $ docker compose ps
 Navigate to `http://localhost:8888` in your web browser to access Jupyter server. This jupyter server contains the kernels for Python, Java and C++. The *Jupyter Server Root* is mapped to current directory in the host (`classroom` directory in this example). The local directory `workspace`in the host is mapped to `/home/devuser/workspace` in the container.
 
 <div align="center">
-<img src="imgs/jupyter-dirs-03.png" width="90%">
+<img src="https://raw.githubusercontent.com/g-courses/jappy.rc/refs/heads/main/imgs/docker/jupyter-dirs-03.png" width="90%">
 </div>
 
 Finally, to stop and remove the containers:
@@ -139,25 +139,25 @@ Assuming both files ([_docker-compose.yml_](classroom/docker-compose.yml)  and [
 Once the directory is filled with files, you must open the directory with VS Code. One way to do this is through the context menu shown in the following figure. The `workspace` directory will be created if it is not already created.
 
 <div align="center">
-<img src="imgs/vscode-dirs-01.jpg" width="70%">
+<img src="https://raw.githubusercontent.com/g-courses/jappy.rc/refs/heads/main/imgs/docker/vscode-dirs-01.jpg" width="70%">
 </div>
 
 When you open the directory with VS Code (with the devcontainer plugin enabled), the folder should reopen in the container:
 
 <div align="center">
-<img src="imgs/vscode-open-01.jpg" width="100%">
+<img src="https://raw.githubusercontent.com/g-courses/jappy.rc/refs/heads/main/imgs/docker/vscode-open-01.jpg" width="100%">
 </div>
 
 The first time the container is created, the development environment's dependencies are installed. When this process completes (VS Code plugins icon without prompts), the development environment is ready to use.
 
 <div align="center">
-<img src="imgs/vscode-seq-01.jpg" width="100%">
+<img src="https://raw.githubusercontent.com/g-courses/jappy.rc/refs/heads/main/imgs/docker/vscode-seq-01.jpg" width="100%">
 </div>
 
 The *WORKPACE[...]* environment is mapped to `workspace` directory in the host. The local directory `workspace`in the host is mapped to `/home/devuser/workspace` in the container.
 
 <div align="center">
-<img src="imgs/vscode-arch-01.jpg" width="100%">
+<img src="https://raw.githubusercontent.com/g-courses/jappy.rc/refs/heads/main/imgs/docker//vscode-arch-01.jpg" width="100%">
 </div>
 
 > Note: It is worth remembering that the files inside the workspace directory are processed inside the container with the tools that it has installed.
