@@ -4,8 +4,10 @@ JAPPY (**JA**va, c**PP** and p**Y**thon) is a development environment designed a
 
 ### Using a Jupyter client
 
+#### First time steps
+
 <details>
-<summary>First time steps</summary>
+<summary>Show</summary>
 
 To use JAPPY with a Jupyter client, you must use the [_docker-compose.yml_](classroom/docker-compose.yml) file available in the [_classroom_](classroom/) directory.
 
