@@ -4,7 +4,7 @@ JAPPY (**JA**va, c**PP** and p**Y**thon) is a development environment designed a
 
 ### Using a Jupyter client
 
-#### First time steps
+#### First time steps 
 
 <details>
 <summary>Show</summary>
